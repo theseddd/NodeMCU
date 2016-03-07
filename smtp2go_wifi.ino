@@ -16,7 +16,7 @@
 void setup() {
   Serial.begin(115200);
   delay(10);
-  // We start by connecting to a WiFi network
+  /* We start by connecting to a WiFi network */
   Serial.println();
   Serial.println();
   Serial.print("Connecting to ");
@@ -53,13 +53,13 @@ void loop() {
  void SendMsg(String m) {
    client.println(m);
    Serial.println(">>>" + m);
-   delay(wait); // wait for a response 
+   delay(wait); /* wait for a response */
    GetResponse();
  }
  void GetResponse() {
     if (client.available()) {
          char c = client.read();
-         while (client.available()) { // Store command char by char.
+         while (client.available()) { /* Store command char by char. */
            ServerResponse +=c;
            c = client.read();
          }
@@ -71,7 +71,7 @@ void loop() {
   Sender = "Sender Email";
   Recipient = "Recipient Email";
   Subject = "Test Messaggio Arduino!";
-  Body += "Test messaggio.\n"; // "\n" is new line
+  Body += "Test messaggio.\n"; /* "\n" is new line */
   Body += "abcdefghijklmnopqrstuvwxyz.\n";
   Body += "0123456789.";
  }
@@ -82,7 +82,7 @@ void loop() {
   }else{
      Serial.println("SMTP server connected ");
      SendMsg("helo"); /* say hello*/
-     SendMsg("ehlo"); /* say hello*/
+     SendMsg("ehlo"); 
      //SendMsg("STARTTLS");
      SendMsg("AUTH LOGIN");
      SendMsg(UserName64); /* Username*/
@@ -103,7 +103,7 @@ void loop() {
      client.stop();
   }
  }
- void encodeBase64(){
+ void encodeBase64(){ /* Encode Username and Password smtp2go */
   unsigned char base64a[63];
   unsigned char base64b[63];
   int base64_lengtha = encode_base64(UserName, sizeof(UserName)-1, base64a);
