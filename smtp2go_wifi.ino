@@ -1,13 +1,13 @@
 #include "base64.hpp"
 #include <ESP8266WiFi.h>
 ///WIFI////////////////////////////////////////////////////////
- const char* ssid     = "Lunaris";
- const char* password = "mfu5531501043";
+ const char* ssid     = "Name WiFi";
+ const char* password = "Password WiFi";
 ///SMTP Server/////////////////////////////////////////////////
  const char* host = "mail.smtp2go.com";
  const int httpPort = 2525;
- unsigned char UserName[] = "theseddd@gmail.com";
- unsigned char Password[] = "0805021566";
+ unsigned char UserName[] = "Username smtp2go";
+ unsigned char Password[] = "Password smtp2go";
 /////////////////////////////////////////////////////////////// 
  String UserName64, Password64, Sender, Recipient, Subject, Body, ServerResponse;
  int wait = 1000;
@@ -68,8 +68,8 @@ void loop() {
   }
  }
  void Emailformat(){
-  Sender = "theseddd@gmail.com";
-  Recipient = "wuttichai.kan12@lamduan.mfu.ac.th";
+  Sender = "Sender Email";
+  Recipient = "Recipient Email";
   Subject = "Test Messaggio Arduino!";
   Body += "Test messaggio.\n"; // "\n" is new line
   Body += "abcdefghijklmnopqrstuvwxyz.\n";
